@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.grid-item {
+    flex: 1 0 auto; /* Adjusts the size dynamically */
+    width: calc(400px / 16); /* Initially 16 columns */
+    height: calc(400px / 16); /* Initially 16 rows */
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+}
+
+
+.grid-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
